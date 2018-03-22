@@ -1,14 +1,12 @@
 spring:
   application:
     name: simple-discovery-server
-  cloud:
-    config:
-      uri: http://localhost:8888
+  profiles:
+    active:
+    - default
 server:
   port: 8761
-#eureka:
-#  client:
-#    fetch-registry: false
-#eureka:
-#  client:
-#    register-with-eureka: false
+eureka:
+  client:
+    fetch-registry: false
+    register-with-eureka: false
