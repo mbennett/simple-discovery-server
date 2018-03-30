@@ -1,12 +1,18 @@
 spring:
   application:
     name: simple-discovery-server
-  profiles:
-    active:
-    - default
 server:
   port: 8761
-eureka:
+eureka:  
+  instance:
+    hostname: localhost
   client:
-    fetch-registry: false
-    register-with-eureka: false
+    registerWithEureka: false
+    fetchRegistry: false
+  server:
+    enableSelfPreservation: false
+info:
+  artifactId: "@project.artifactId@"
+  description: "@project.description@"
+  version: "@project.version@"
+    
